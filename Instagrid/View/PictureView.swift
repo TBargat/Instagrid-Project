@@ -10,12 +10,41 @@ import UIKit
 
 class PictureView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    @IBOutlet private var smallFrameOne: UIView!
+    @IBOutlet private var smallFrameTwo: UIView!
+    @IBOutlet private var smallFrameThree: UIView!
+    @IBOutlet private var smallFrameFour: UIView!
+    @IBOutlet private var bigFrameOne: UIView!
+    @IBOutlet private var bigFrameTwo: UIView!
 
+    
+    // Functions to get the right layout
+    
+    func setLayoutOne() {
+        smallFrameOne.isHidden = true
+        smallFrameTwo.isHidden = true
+        smallFrameThree.isHidden = false
+        smallFrameFour.isHidden = false
+        bigFrameOne.isHidden = false
+        bigFrameTwo.isHidden = true
+        
+    }
+    
+    func setLayoutTwo() {
+        smallFrameOne.isHidden = false
+        smallFrameTwo.isHidden = false
+        smallFrameThree.isHidden = true
+        smallFrameFour.isHidden = true
+        bigFrameOne.isHidden = true
+        bigFrameTwo.isHidden = false
+    }
+    
+    func setLayoutThree() {
+        smallFrameOne.isHidden = false
+        smallFrameTwo.isHidden = false
+        smallFrameThree.isHidden = false
+        smallFrameFour.isHidden = false
+        bigFrameOne.isHidden = true
+        bigFrameTwo.isHidden = true
+    }
 }

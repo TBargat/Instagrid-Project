@@ -10,16 +10,41 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var layoutOneButton: UIButton!
+    @IBOutlet weak var layoutTwoButton: UIButton!
+    @IBOutlet weak var layoutThreeButton: UIButton!
+    
+    @IBOutlet weak var pictureView: PictureView!
+    
+    @IBAction func didTapLayoutOneButton(_ sender: Any) {
+        pictureView.setLayoutOne()
+        showCheckMark(layoutOneButton)
+        hideOtherCheckMarks(layoutTwoButton, layoutThreeButton)
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func didTapLayoutTwoButton(_ sender: Any) {
+        pictureView.setLayoutTwo()
+        showCheckMark(layoutTwoButton)
+        hideOtherCheckMarks(layoutOneButton, layoutThreeButton)
     }
-
+    @IBAction func didTapLayoutThreeButton(_ sender: Any) {
+        pictureView.setLayoutThree()
+        showCheckMark(layoutThreeButton)
+        hideOtherCheckMarks(layoutOneButton, layoutTwoButton)
+    }
+    
+    // Functions to change the checked image of our layout buttons
+    
+    private func hideOtherCheckMarks(_ firstOtherButton: UIButton, _ secondOtherButton: UIButton){
+        firstOtherButton.imageView?.isHidden = true
+        secondOtherButton.imageView?.isHidden = true
+    }
+    
+    private func showCheckMark(_ button: UIButton) {
+        button.imageView?.isHidden = false
+    }
+    
+    
 
 }
 
