@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var pictureView: PictureView!
     
+    
     @IBAction func didTapLayoutOneButton(_ sender: Any) {
         pictureView.setLayoutOne()
         showCheckMark(layoutOneButton)
@@ -43,6 +44,23 @@ class ViewController: UIViewController {
     private func showCheckMark(_ button: UIButton) {
         button.imageView?.isHidden = false
     }
+    
+    // Management of the buttons to add pictures on the canvas
+    
+    @IBAction func didTapSmallImageOne(_ sender: Any) {
+    }
+    @IBAction func didTapSmallImageTwo(_ sender: Any) {
+    }
+    @IBAction func didTapSmallImageThree(_ sender: Any) {
+    }
+    @IBAction func didTapSmallImageFour(_ sender: Any) {
+    }
+    @IBAction func didTapBigImageOne(_ sender: Any) {
+    }
+    @IBAction func didTapBigImageTwo(_ sender: Any) {
+    }
+    
+    
     
     
 

@@ -17,6 +17,13 @@ class PictureView: UIView {
     @IBOutlet private var bigFrameOne: UIView!
     @IBOutlet private var bigFrameTwo: UIView!
 
+    @IBOutlet private var smallImageOne: UIImageView!
+    @IBOutlet private var smallImageTwo: UIImageView!
+    @IBOutlet private var smallImageThree: UIImageView!
+    @IBOutlet private var smallImageFour: UIImageView!
+    @IBOutlet private var bigImageOne: UIImageView!
+    @IBOutlet private var bigImageTwo: UIImageView!
+    
     
     // Functions to get the right layout
     
