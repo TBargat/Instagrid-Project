@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
 
     @IBOutlet weak var layoutOneButton: UIButton!
     @IBOutlet weak var layoutTwoButton: UIButton!
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var pictureView: PictureView!
     
+    var buttonClicked: ButtonClicked = .none
     
     @IBAction func didTapLayoutOneButton(_ sender: Any) {
         pictureView.setLayoutOne()
@@ -48,21 +50,120 @@ class ViewController: UIViewController {
     // Management of the buttons to add pictures on the canvas
     
     @IBAction func didTapSmallImageOne(_ sender: Any) {
+        buttonClicked = .smallButtonOne
+        displayActionSheet()
     }
     @IBAction func didTapSmallImageTwo(_ sender: Any) {
+        buttonClicked = .smallButtonTwo
+        displayActionSheet()
     }
     @IBAction func didTapSmallImageThree(_ sender: Any) {
+        buttonClicked = .smallButtonThree
+        displayActionSheet()
     }
     @IBAction func didTapSmallImageFour(_ sender: Any) {
+        buttonClicked = .smallButtonFour
+        displayActionSheet()
     }
     @IBAction func didTapBigImageOne(_ sender: Any) {
+        buttonClicked = .bigButtonOne
+        displayActionSheet()
     }
     @IBAction func didTapBigImageTwo(_ sender: Any) {
+        buttonClicked = .bigButtonTwo
+        displayActionSheet()
+    }
+    
+    // Enum for the button identification
+    enum ButtonClicked {
+        case none, smallButtonOne, smallButtonTwo, smallButtonThree, smallButtonFour, bigButtonOne, bigButtonTwo
     }
     
     
+    // Function Photo Library
     
+    private func accessPhotoLibrary() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    // Function Acces Camera
     
+    private func accessCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    // Function to display our Action Sheet
+    private func displayActionSheet() {
+        
+        let pictureSourceSelector = UIAlertController(title: nil, message: "Choose your picture source" , preferredStyle: .actionSheet)
+        
+        pictureSourceSelector.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.accessPhotoLibrary()
+        }))
+        
+        pictureSourceSelector.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.accessCamera()
+        }))
+        
+        pictureSourceSelector.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(pictureSourceSelector, animated: true, completion: nil)
+        
+    }
+    
+    // Delegate for the picker controller
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        switch buttonClicked {
+        case .smallButtonOne:
+            pictureView.smallImageOnePicked = image
+        case .smallButtonTwo:
+            pictureView.smallImageTwoPicked = image
+        case .smallButtonThree:
+            pictureView.smallImageThreePicked = image
+        case .smallButtonFour:
+            pictureView.smallImageFourPicked = image
+        case .bigButtonOne:
+            pictureView.bigImageOnePicked = image
+        case .bigButtonTwo:
+            pictureView.bigImageTwoPicked = image
+        case .none:
+            Void.self // que faire?
+        }
+        dismiss(animated:true, completion: nil)
+    }
+    
+    // Function to share the picture once it's finished
+    
+    private func sharePicture() {
+        let imageToBeSaved = pictureView.asImage()
+        let activityItem: [AnyObject] = [imageToBeSaved as AnyObject]
+        let avc = UIActivityViewController(activityItems: activityItem as [AnyObject], applicationActivities: nil)
+        self.present(avc, animated: true, completion: nil)
+    }
 
+}
+
+// Extension to turn a View into an Image
+
+extension UIView {
+    func asImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: self.bounds)
+        return renderer.image { (context) in
+            layer.render(in: context.cgContext)
+        }
+    }
 }
 

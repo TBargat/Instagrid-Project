@@ -421,7 +421,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="didTapBigImageOne" destination="00J-iQ-3Cv" id="H3r-W4-Yvh"/>
                         <outlet property="layoutOneButton" destination="z46-He-HVn" id="2Jc-nP-VMO"/>
                         <outlet property="layoutThreeButton" destination="Q4j-dX-18L" id="hc8-tn-wIn"/>
                         <outlet property="layoutTwoButton" destination="lFb-i8-q3c" id="y9o-IK-kCq"/>

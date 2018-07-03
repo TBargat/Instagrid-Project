@@ -24,6 +24,42 @@ class PictureView: UIView {
     @IBOutlet private var bigImageOne: UIImageView!
     @IBOutlet private var bigImageTwo: UIImageView!
     
+    var smallImageOnePicked = UIImage() {
+        didSet {
+            smallImageOne.image = smallImageOnePicked
+        }
+    }
+    
+    var smallImageTwoPicked = UIImage() {
+        didSet {
+            smallImageTwo.image = smallImageTwoPicked
+        }
+    }
+    
+    var smallImageThreePicked = UIImage() {
+        didSet {
+            smallImageThree.image = smallImageThreePicked
+        }
+    }
+    
+    var smallImageFourPicked = UIImage() {
+        didSet {
+            smallImageFour.image = smallImageFourPicked
+        }
+    }
+    
+    var bigImageOnePicked = UIImage() {
+        didSet {
+            bigImageOne.image = bigImageOnePicked
+        }
+    }
+    
+    var bigImageTwoPicked = UIImage() {
+        didSet{
+            bigImageTwo.image = bigImageTwoPicked
+        }
+    }
+   
     
     // Functions to get the right layout
     
