@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F617AF1420EB6CD000A1CD21 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F617AF1320EB6CD000A1CD21 /* Default-568h@2x.png */; };
+		F617AF1620EB6D3200A1CD21 /* PictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F617AF1520EB6D3200A1CD21 /* PictureView.swift */; };
 		F6BA242E20EA4CE000166F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA242D20EA4CE000166F26 /* AppDelegate.swift */; };
 		F6BA243020EA4CE000166F26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA242F20EA4CE000166F26 /* ViewController.swift */; };
 		F6BA243320EA4CE000166F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6BA243120EA4CE000166F26 /* Main.storyboard */; };
 		F6BA243520EA4CE000166F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6BA243420EA4CE000166F26 /* Assets.xcassets */; };
 		F6BA243820EA4CE000166F26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6BA243620EA4CE000166F26 /* LaunchScreen.storyboard */; };
+		F6BA244020EA4D6F00166F26 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6BA243F20EA4D6F00166F26 /* ThirstySoftRegular.otf */; };
+		F6BA244220EA4D7E00166F26 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6BA244120EA4D7E00166F26 /* Delm-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F617AF1320EB6CD000A1CD21 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F617AF1520EB6D3200A1CD21 /* PictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureView.swift; sourceTree = "<group>"; };
 		F6BA242A20EA4CE000166F26 /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6BA242D20EA4CE000166F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6BA242F20EA4CE000166F26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +28,8 @@
 		F6BA243420EA4CE000166F26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6BA243720EA4CE000166F26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6BA243920EA4CE000166F26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6BA243F20EA4D6F00166F26 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
+		F6BA244120EA4D7E00166F26 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,7 @@
 		F6BA242120EA4CE000166F26 = {
 			isa = PBXGroup;
 			children = (
+				F617AF1320EB6CD000A1CD21 /* Default-568h@2x.png */,
 				F6BA242C20EA4CE000166F26 /* Instagrid */,
 				F6BA242B20EA4CE000166F26 /* Products */,
 			);
@@ -54,14 +63,49 @@
 		F6BA242C20EA4CE000166F26 /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				F6BA242D20EA4CE000166F26 /* AppDelegate.swift */,
-				F6BA242F20EA4CE000166F26 /* ViewController.swift */,
-				F6BA243120EA4CE000166F26 /* Main.storyboard */,
-				F6BA243420EA4CE000166F26 /* Assets.xcassets */,
-				F6BA243620EA4CE000166F26 /* LaunchScreen.storyboard */,
-				F6BA243920EA4CE000166F26 /* Info.plist */,
+				F6BA244320EA4EF800166F26 /* Model */,
+				F6BA244420EA4F0200166F26 /* View */,
+				F6BA244520EA4F0F00166F26 /* Controller */,
+				F6BA244620EA4F1C00166F26 /* Supporting Files */,
 			);
 			path = Instagrid;
+			sourceTree = "<group>";
+		};
+		F6BA244320EA4EF800166F26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F6BA244420EA4F0200166F26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6BA243120EA4CE000166F26 /* Main.storyboard */,
+				F617AF1520EB6D3200A1CD21 /* PictureView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6BA244520EA4F0F00166F26 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F6BA242F20EA4CE000166F26 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F6BA244620EA4F1C00166F26 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6BA243420EA4CE000166F26 /* Assets.xcassets */,
+				F6BA242D20EA4CE000166F26 /* AppDelegate.swift */,
+				F6BA243620EA4CE000166F26 /* LaunchScreen.storyboard */,
+				F6BA243F20EA4D6F00166F26 /* ThirstySoftRegular.otf */,
+				F6BA244120EA4D7E00166F26 /* Delm-Medium.otf */,
+				F6BA243920EA4CE000166F26 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +168,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6BA243820EA4CE000166F26 /* LaunchScreen.storyboard in Resources */,
+				F6BA244220EA4D7E00166F26 /* Delm-Medium.otf in Resources */,
 				F6BA243520EA4CE000166F26 /* Assets.xcassets in Resources */,
+				F6BA244020EA4D6F00166F26 /* ThirstySoftRegular.otf in Resources */,
 				F6BA243320EA4CE000166F26 /* Main.storyboard in Resources */,
+				F617AF1420EB6CD000A1CD21 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F617AF1620EB6D3200A1CD21 /* PictureView.swift in Sources */,
 				F6BA243020EA4CE000166F26 /* ViewController.swift in Sources */,
 				F6BA242E20EA4CE000166F26 /* AppDelegate.swift in Sources */,
 			);
