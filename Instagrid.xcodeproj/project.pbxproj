@@ -63,6 +63,7 @@
 		F6BA242C20EA4CE000166F26 /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
+				F6BA243920EA4CE000166F26 /* Info.plist */,
 				F6BA244320EA4EF800166F26 /* Model */,
 				F6BA244420EA4F0200166F26 /* View */,
 				F6BA244520EA4F0F00166F26 /* Controller */,
@@ -103,7 +104,6 @@
 				F6BA243620EA4CE000166F26 /* LaunchScreen.storyboard */,
 				F6BA243F20EA4D6F00166F26 /* ThirstySoftRegular.otf */,
 				F6BA244120EA4D7E00166F26 /* Delm-Medium.otf */,
-				F6BA243920EA4CE000166F26 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
