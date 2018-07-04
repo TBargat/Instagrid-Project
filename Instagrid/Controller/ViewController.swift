@@ -35,6 +35,31 @@ UINavigationControllerDelegate {
     
     var buttonClicked: ButtonClicked = .none
     
+    enum ScreenOrientation {
+        case portrait, landscape
+    }
+    
+    // to use the orientation of the screen in several cases
+    var screenOrientation: ScreenOrientation = .portrait
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(dragPictureView(_:)))
+        pictureView.addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    // to detect the orientation of the screen
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            screenOrientation = .landscape
+            print("landscape")
+        } else {
+            screenOrientation = .portrait
+            print("portrait")
+        }
+    }
+    
     @IBAction func didTapLayoutOneButton(_ sender: Any) {
         pictureView.setLayoutOne()
         showCheckMark(layoutOneButton)
@@ -166,14 +191,47 @@ UINavigationControllerDelegate {
         dismiss(animated:true, completion: nil)
     }
     
+    //Function to recognize the gesture
+    
+    @objc func dragPictureView(_ sender: UIPanGestureRecognizer){
+        switch sender.state {
+        case .changed :
+            sharePicture()
+        default:
+            break
+        }
+    }
     // Function to share the picture once it's finished
     
     private func sharePicture() {
+        // Animation of the Picture view
+        let screenHeight = UIScreen.main.bounds.height
+        let screenWidth = UIScreen.main.bounds.width
+        var translationTransform: CGAffineTransform
+        // ajouter un switch pour portrait et paysage
+        switch screenOrientation {
+        case .landscape:
+            translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
+        case .portrait:
+            translationTransform = CGAffineTransform(translationX: 0, y: -screenHeight)
+        }
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.pictureView.transform = translationTransform
+        }) { (success) in
+            if success {
+                self.openTheSharingSheetPictureViewIntoAnImage()
+            }
+        }
+    }
+    
+    private func openTheSharingSheetPictureViewIntoAnImage() {
         let imageToBeSaved = pictureView.asImage()
         let activityItem: [AnyObject] = [imageToBeSaved as AnyObject]
         let avc = UIActivityViewController(activityItems: activityItem as [AnyObject], applicationActivities: nil)
         self.present(avc, animated: true, completion: nil)
     }
+    
 
 }
 
