@@ -11,11 +11,27 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
 
-    @IBOutlet weak var layoutOneButton: UIButton!
-    @IBOutlet weak var layoutTwoButton: UIButton!
-    @IBOutlet weak var layoutThreeButton: UIButton!
+    @IBOutlet weak var layoutOneButton: UIButton! {
+        didSet {
+            layoutOneButton.imageView?.isHidden = false
+        }
+    }
+    @IBOutlet weak var layoutTwoButton: UIButton!{
+        didSet {
+            layoutTwoButton.imageView?.isHidden = true
+        }
+    }
+    @IBOutlet weak var layoutThreeButton: UIButton!{
+        didSet {
+            layoutThreeButton.imageView?.isHidden = true
+        }
+    }
     
-    @IBOutlet weak var pictureView: PictureView!
+    @IBOutlet weak var pictureView: PictureView!{
+        didSet{
+            pictureView.layer.applySketchShadow(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5), alpha: 0.5, x: 0, y: 2, blur: 4, spread: 0)
+        }
+    }
     
     var buttonClicked: ButtonClicked = .none
     
@@ -72,6 +88,11 @@ UINavigationControllerDelegate {
     @IBAction func didTapBigImageTwo(_ sender: Any) {
         buttonClicked = .bigButtonTwo
         displayActionSheet()
+    }
+    
+    // Function to reset the frame without any picture
+    
+    private func resetPictureView() {
     }
     
     // Enum for the button identification
@@ -163,6 +184,31 @@ extension UIView {
         let renderer = UIGraphicsImageRenderer(bounds: self.bounds)
         return renderer.image { (context) in
             layer.render(in: context.cgContext)
+        }
+    }
+}
+
+// Extension to have the exact same shadow than on Sketch
+
+extension CALayer {
+    func applySketchShadow(
+        color: UIColor = .black,
+        alpha: Float = 0.5,
+        x: CGFloat = 0,
+        y: CGFloat = 2,
+        blur: CGFloat = 4,
+        spread: CGFloat = 0)
+    {
+        shadowColor = color.cgColor
+        shadowOpacity = alpha
+        shadowOffset = CGSize(width: x, height: y)
+        shadowRadius = blur / 2.0
+        if spread == 0 {
+            shadowPath = nil
+        } else {
+            let dx = -spread
+            let rect = bounds.insetBy(dx: dx, dy: dx)
+            shadowPath = UIBezierPath(rect: rect).cgPath
         }
     }
 }

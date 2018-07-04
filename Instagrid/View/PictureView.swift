@@ -10,12 +10,40 @@ import UIKit
 
 class PictureView: UIView {
 
-    @IBOutlet private var smallFrameOne: UIView!
+    @IBOutlet private var smallFrameOne: UIView!{
+        didSet{
+            makeRoundCorners(frame: smallFrameOne)
+        }
+    }
     @IBOutlet private var smallFrameTwo: UIView!
-    @IBOutlet private var smallFrameThree: UIView!
-    @IBOutlet private var smallFrameFour: UIView!
-    @IBOutlet private var bigFrameOne: UIView!
-    @IBOutlet private var bigFrameTwo: UIView!
+        {
+        didSet{
+            makeRoundCorners(frame: smallFrameTwo)
+        }
+    }
+    @IBOutlet private var smallFrameThree: UIView!{
+        didSet{
+            makeRoundCorners(frame: smallFrameThree)
+            smallFrameThree.isHidden = false
+        }
+    }
+    @IBOutlet private var smallFrameFour: UIView!{
+        didSet{
+            makeRoundCorners(frame: smallFrameFour)
+            smallFrameFour.isHidden = false
+        }
+    }
+    @IBOutlet private var bigFrameOne: UIView!{
+        didSet{
+            makeRoundCorners(frame: bigFrameOne)
+            bigFrameOne.isHidden = false
+        }
+    }
+    @IBOutlet private var bigFrameTwo: UIView!{
+        didSet{
+            makeRoundCorners(frame: bigFrameTwo)
+        }
+    }
 
     @IBOutlet private var smallImageOne: UIImageView!
     @IBOutlet private var smallImageTwo: UIImageView!
@@ -29,6 +57,8 @@ class PictureView: UIView {
             smallImageOne.image = smallImageOnePicked
         }
     }
+    
+    
     
     var smallImageTwoPicked = UIImage() {
         didSet {
@@ -89,5 +119,10 @@ class PictureView: UIView {
         smallFrameFour.isHidden = false
         bigFrameOne.isHidden = true
         bigFrameTwo.isHidden = true
+    }
+    
+    private func makeRoundCorners(frame : UIView){
+        frame.layer.cornerRadius = 2
+        frame.layer.masksToBounds = true
     }
 }
