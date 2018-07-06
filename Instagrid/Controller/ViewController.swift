@@ -186,7 +186,7 @@ UINavigationControllerDelegate {
         case .bigButtonTwo:
             pictureView.bigImageTwoPicked = image
         case .none:
-            Void.self // que faire?
+            break 
         }
         dismiss(animated:true, completion: nil)
     }
@@ -225,11 +225,28 @@ UINavigationControllerDelegate {
         }
     }
     
+    private func putThePictureViewBack() {
+        var translationTransform: CGAffineTransform
+        switch screenOrientation {
+        case .landscape:
+            translationTransform = .identity
+        case .portrait:
+            translationTransform = .identity
+        }
+        UIView.animate(withDuration: 2, animations: {
+            self.pictureView.transform = translationTransform
+        }) { (success) in
+            if success {
+                print("Working")
+            }
+        }
+    }
+    
     private func openTheSharingSheetPictureViewIntoAnImage() {
         let imageToBeSaved = pictureView.asImage()
         let activityItem: [AnyObject] = [imageToBeSaved as AnyObject]
         let avc = UIActivityViewController(activityItems: activityItem as [AnyObject], applicationActivities: nil)
-        self.present(avc, animated: true, completion: nil)
+        self.present(avc, animated: true, completion: putThePictureViewBack)
     }
     
 
