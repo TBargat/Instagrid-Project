@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina3_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -24,20 +24,20 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQf-oX-cBO" customClass="PictureView" customModule="Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="57" y="218" width="300" height="300"/>
+                                <rect key="frame" x="119" y="57" width="242" height="242"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFC-Mp-bxZ">
-                                        <rect key="frame" x="15.666666666666679" y="15.66666666666665" width="126.33333333333331" height="126.33333333333331"/>
+                                        <rect key="frame" x="15.5" y="15.5" width="97.5" height="97.5"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="CrossShape" translatesAutoresizingMaskIntoConstraints="NO" id="Wxc-Wo-4o5">
-                                                <rect key="frame" x="0.0" y="0.0" width="126.33333333333333" height="126.33333333333333"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="97.5" height="97.5"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWv-Yg-HfJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="126.33333333333333" height="126.33333333333333"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="97.5" height="97.5"/>
                                                 <connections>
                                                     <action selector="didTapSmallImageOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HfC-kf-nBC"/>
                                                 </connections>
@@ -56,13 +56,13 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AO-Pp-35t">
-                                        <rect key="frame" x="158" y="15.66666666666665" width="127" height="127.33333333333331"/>
+                                        <rect key="frame" x="129" y="15.5" width="98" height="98.5"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="CrossShape" translatesAutoresizingMaskIntoConstraints="NO" id="IUY-HO-gVu">
-                                                <rect key="frame" x="0.0" y="0.0" width="127" height="127.33333333333333"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="98.5"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dht-HQ-P2c">
-                                                <rect key="frame" x="0.0" y="0.0" width="127" height="127.33333333333333"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="98.5"/>
                                                 <connections>
                                                     <action selector="didTapSmallImageTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IPh-Dh-kVE"/>
                                                 </connections>
@@ -81,13 +81,13 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOE-vY-xnB">
-                                        <rect key="frame" x="15.666666666666679" y="158" width="126.33333333333331" height="127.66666666666669"/>
+                                        <rect key="frame" x="15.5" y="129" width="97.5" height="98.5"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="CrossShape" translatesAutoresizingMaskIntoConstraints="NO" id="tyN-U6-GyG">
-                                                <rect key="frame" x="0.0" y="0.0" width="126.33333333333333" height="127.66666666666667"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="97.5" height="98.5"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaL-b7-MHB">
-                                                <rect key="frame" x="0.0" y="0.0" width="126.33333333333333" height="127.66666666666667"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="97.5" height="98.5"/>
                                                 <connections>
                                                     <action selector="didTapSmallImageThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Rm-4E-2pz"/>
                                                 </connections>
@@ -106,13 +106,13 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxn-mS-tRH">
-                                        <rect key="frame" x="158" y="159" width="127" height="126.66666666666669"/>
+                                        <rect key="frame" x="129" y="130" width="98" height="97.5"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="CrossShape" translatesAutoresizingMaskIntoConstraints="NO" id="vZP-Vk-40r">
-                                                <rect key="frame" x="0.0" y="0.0" width="127" height="126.66666666666667"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="97.5"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wai-vd-l3e">
-                                                <rect key="frame" x="0.0" y="0.0" width="127" height="126.66666666666667"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="97.5"/>
                                                 <connections>
                                                     <action selector="didTapSmallImageFour:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BVs-TA-DR1"/>
                                                 </connections>
@@ -131,13 +131,13 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcr-9o-vmL">
-                                        <rect key="frame" x="15.666666666666657" y="15.666666666666657" width="269.33333333333337" height="127"/>
+                                        <rect key="frame" x="15.5" y="15.5" width="211.5" height="98"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="CrossShape" translatesAutoresizingMaskIntoConstraints="NO" id="5G1-WO-ch7">
-                                                <rect key="frame" x="0.0" y="0.0" width="269.33333333333331" height="127"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="211.5" height="98"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00J-iQ-3Cv">
-                                                <rect key="frame" x="0.0" y="0.0" width="269.33333333333331" height="127"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="211.5" height="98"/>
                                                 <connections>
                                                     <action selector="didTapBigImageOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v7H-1D-9NE"/>
                                                 </connections>
@@ -157,13 +157,13 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kI0-0s-xjG">
-                                        <rect key="frame" x="15.666666666666657" y="158" width="269.33333333333337" height="127.66666666666669"/>
+                                        <rect key="frame" x="15.5" y="129" width="211.5" height="98.5"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="CrossShape" translatesAutoresizingMaskIntoConstraints="NO" id="pRp-HK-Bch">
-                                                <rect key="frame" x="0.0" y="0.0" width="269.33333333333331" height="127.66666666666667"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="211.5" height="98.5"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyM-Ne-pBK">
-                                                <rect key="frame" x="0.0" y="0.0" width="269.33333333333331" height="127.66666666666667"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="211.5" height="98.5"/>
                                                 <connections>
                                                     <action selector="didTapBigImageTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K1f-eU-854"/>
                                                 </connections>
@@ -229,17 +229,18 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duV-7k-nY1">
-                                <rect key="frame" x="127.00000000000001" y="179" width="160.33333333333337" height="29"/>
+                                <rect key="frame" x="80" y="83" width="160.5" height="29"/>
                                 <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="UpArrow" translatesAutoresizingMaskIntoConstraints="NO" id="ndy-tx-BiY">
-                                <rect key="frame" x="199.66666666666666" y="72" width="15" height="102"/>
+                                <rect key="frame" x="152.5" y="68" width="15" height="10"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhp-XU-Mfu">
-                                <rect key="frame" x="147.66666666666666" y="28" width="118.99999999999997" height="39"/>
+                                <rect key="frame" x="180.5" y="11" width="119" height="39"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="PUY-dN-Iuy"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118.67" id="ud1-C3-Sdm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
@@ -248,10 +249,10 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dQF-YH-YFd">
-                                <rect key="frame" x="57" y="624" width="300" height="80"/>
+                                <rect key="frame" x="379.5" y="57" width="60.5" height="242"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z46-He-HVn">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60.5" height="60.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="csM-gN-fbn"/>
                                             <constraint firstAttribute="width" secondItem="z46-He-HVn" secondAttribute="height" multiplier="1:1" id="vdA-BD-GV0"/>
@@ -274,7 +275,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFb-i8-q3c">
-                                        <rect key="frame" x="110" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="90.5" width="60.5" height="61"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="JFC-bZ-Uy1"/>
                                             <constraint firstAttribute="width" secondItem="lFb-i8-q3c" secondAttribute="height" multiplier="1:1" id="LEq-Va-Znl"/>
@@ -297,7 +298,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4j-dX-18L">
-                                        <rect key="frame" x="220" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="181.5" width="60.5" height="60.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="Chp-Vv-Z3w"/>
                                             <constraint firstAttribute="width" secondItem="Q4j-dX-18L" secondAttribute="height" multiplier="1:1" id="Nuh-6g-yBu"/>
@@ -322,27 +323,34 @@
                                 </subviews>
                                 <variation key="heightClass=compact" axis="vertical"/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3f-SY-KSu">
-                                <rect key="frame" x="0.0" y="238.66666666666666" width="171" height="28.999999999999972"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q3f-SY-KSu">
+                                <rect key="frame" x="5" y="174" width="109" height="29"/>
                                 <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="LeftArrow" translatesAutoresizingMaskIntoConstraints="NO" id="wrM-1n-gSx">
-                                <rect key="frame" x="80.666666666666671" y="213.66666666666666" width="10" height="15"/>
+                                <rect key="frame" x="0.0" y="148.5" width="119" height="15"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.71764705880000002" green="0.84313725490000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dQF-YH-YFd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q3f-SY-KSu" secondAttribute="trailing" constant="220" id="1kU-sS-rXS"/>
                             <constraint firstItem="dQF-YH-YFd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3bl-ly-PjP"/>
+                            <constraint firstItem="hQf-oX-cBO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q3f-SY-KSu" secondAttribute="trailing" constant="5" id="41Q-Wn-NSQ"/>
                             <constraint firstItem="hQf-oX-cBO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8AP-tY-alA"/>
+                            <constraint firstItem="Q3f-SY-KSu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Alx-CV-8SO"/>
                             <constraint firstItem="dQF-YH-YFd" firstAttribute="top" secondItem="hQf-oX-cBO" secondAttribute="top" id="CIy-5a-24Y"/>
                             <constraint firstItem="dhp-XU-Mfu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="COt-lO-FdN"/>
+                            <constraint firstItem="Q3f-SY-KSu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="H4K-6Y-stt">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="hQf-oX-cBO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-5" id="INs-0L-ihy"/>
                             <constraint firstItem="hQf-oX-cBO" firstAttribute="centerY" secondItem="Q3f-SY-KSu" secondAttribute="centerY" constant="-10" id="Ici-9K-5PG"/>
                             <constraint firstItem="ndy-tx-BiY" firstAttribute="top" relation="lessThanOrEqual" secondItem="dhp-XU-Mfu" secondAttribute="bottom" priority="999" constant="54" id="Mdn-Qu-QLI">
                                 <variation key="heightClass=regular" constant="5"/>
                             </constraint>
+                            <constraint firstItem="Q3f-SY-KSu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="NmL-CL-old"/>
                             <constraint firstItem="ndy-tx-BiY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ru4-Bq-9cd"/>
                             <constraint firstItem="dQF-YH-YFd" firstAttribute="bottom" secondItem="hQf-oX-cBO" secondAttribute="bottom" id="SZ5-6d-R1U"/>
                             <constraint firstItem="Q3f-SY-KSu" firstAttribute="top" secondItem="wrM-1n-gSx" secondAttribute="bottom" constant="10" id="SdG-tG-6fD"/>
@@ -350,16 +358,23 @@
                                 <variation key="heightClass=regular" constant="10"/>
                             </constraint>
                             <constraint firstItem="Q3f-SY-KSu" firstAttribute="centerX" secondItem="wrM-1n-gSx" secondAttribute="centerX" id="T4P-J9-lrD"/>
-                            <constraint firstItem="Q3f-SY-KSu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tbe-pX-piQ"/>
                             <constraint firstItem="duV-7k-nY1" firstAttribute="top" secondItem="ndy-tx-BiY" secondAttribute="bottom" constant="5" id="Wdc-TI-9zF"/>
                             <constraint firstItem="hQf-oX-cBO" firstAttribute="top" secondItem="dhp-XU-Mfu" secondAttribute="bottom" constant="7" id="b9Y-Mm-5Ha"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Q3f-SY-KSu" secondAttribute="trailing" constant="370" id="bZM-wG-DSg"/>
+                            <constraint firstItem="Q3f-SY-KSu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="bcI-pm-ISx">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="dhp-XU-Mfu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="drQ-b2-5D0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hQf-oX-cBO" secondAttribute="bottom" constant="21" id="gHf-gZ-kze"/>
                             <constraint firstItem="dhp-XU-Mfu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="hnj-fl-oGX"/>
+                            <constraint firstItem="wrM-1n-gSx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="i4M-7y-Kda"/>
                             <constraint firstItem="duV-7k-nY1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kAY-q8-BoZ"/>
+                            <constraint firstItem="hQf-oX-cBO" firstAttribute="leading" secondItem="Q3f-SY-KSu" secondAttribute="trailing" constant="5" id="mfg-d2-keE"/>
                             <constraint firstItem="hQf-oX-cBO" firstAttribute="top" secondItem="duV-7k-nY1" secondAttribute="bottom" constant="10" id="qTO-Qe-z9a"/>
+                            <constraint firstItem="wrM-1n-gSx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="t9J-sZ-tI8"/>
                             <constraint firstItem="hQf-oX-cBO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tf7-zt-wYX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dQF-YH-YFd" secondAttribute="bottom" constant="32" id="uEz-nj-bod"/>
+                            <constraint firstItem="hQf-oX-cBO" firstAttribute="leading" secondItem="wrM-1n-gSx" secondAttribute="trailing" id="ujx-PX-Na7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dQF-YH-YFd" secondAttribute="trailing" constant="40" id="zH3-y9-a6r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -370,15 +385,25 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Mdn-Qu-QLI"/>
+                                <exclude reference="bZM-wG-DSg"/>
                                 <exclude reference="gHf-gZ-kze"/>
                                 <exclude reference="zH3-y9-a6r"/>
+                                <exclude reference="41Q-Wn-NSQ"/>
                                 <exclude reference="INs-0L-ihy"/>
                                 <exclude reference="Ici-9K-5PG"/>
                                 <exclude reference="b9Y-Mm-5Ha"/>
+                                <exclude reference="mfg-d2-keE"/>
+                                <exclude reference="ujx-PX-Na7"/>
+                                <exclude reference="i4M-7y-Kda"/>
+                                <exclude reference="t9J-sZ-tI8"/>
+                                <exclude reference="Alx-CV-8SO"/>
+                                <exclude reference="H4K-6Y-stt"/>
+                                <exclude reference="NmL-CL-old"/>
                                 <exclude reference="SdG-tG-6fD"/>
                                 <exclude reference="T4P-J9-lrD"/>
-                                <exclude reference="Tbe-pX-piQ"/>
+                                <exclude reference="bcI-pm-ISx"/>
                                 <exclude reference="drQ-b2-5D0"/>
+                                <exclude reference="1kU-sS-rXS"/>
                                 <exclude reference="CIy-5a-24Y"/>
                                 <exclude reference="SZ5-6d-R1U"/>
                                 <exclude reference="Sgn-FC-IRx"/>
@@ -395,19 +420,29 @@
                                 <exclude reference="Wdc-TI-9zF"/>
                                 <exclude reference="kAY-q8-BoZ"/>
                                 <exclude reference="Ru4-Bq-9cd"/>
+                                <exclude reference="bZM-wG-DSg"/>
                                 <include reference="gHf-gZ-kze"/>
                                 <exclude reference="uEz-nj-bod"/>
                                 <include reference="zH3-y9-a6r"/>
+                                <exclude reference="41Q-Wn-NSQ"/>
                                 <exclude reference="INs-0L-ihy"/>
                                 <include reference="Ici-9K-5PG"/>
                                 <include reference="b9Y-Mm-5Ha"/>
+                                <include reference="mfg-d2-keE"/>
                                 <exclude reference="qTO-Qe-z9a"/>
                                 <exclude reference="tf7-zt-wYX"/>
+                                <include reference="ujx-PX-Na7"/>
+                                <exclude reference="i4M-7y-Kda"/>
+                                <include reference="t9J-sZ-tI8"/>
+                                <exclude reference="Alx-CV-8SO"/>
+                                <exclude reference="H4K-6Y-stt"/>
+                                <include reference="NmL-CL-old"/>
                                 <include reference="SdG-tG-6fD"/>
-                                <include reference="T4P-J9-lrD"/>
-                                <include reference="Tbe-pX-piQ"/>
+                                <exclude reference="T4P-J9-lrD"/>
+                                <exclude reference="bcI-pm-ISx"/>
                                 <include reference="drQ-b2-5D0"/>
                                 <exclude reference="hnj-fl-oGX"/>
+                                <exclude reference="1kU-sS-rXS"/>
                                 <exclude reference="3bl-ly-PjP"/>
                                 <include reference="CIy-5a-24Y"/>
                                 <include reference="SZ5-6d-R1U"/>
@@ -429,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.28185907046478" y="130.40000000000001"/>
+            <point key="canvasLocation" x="136.25" y="129.375"/>
         </scene>
     </scenes>
     <resources>

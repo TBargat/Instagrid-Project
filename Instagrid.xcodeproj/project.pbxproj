@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F617AF1420EB6CD000A1CD21 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F617AF1320EB6CD000A1CD21 /* Default-568h@2x.png */; };
 		F617AF1620EB6D3200A1CD21 /* PictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F617AF1520EB6D3200A1CD21 /* PictureView.swift */; };
 		F6BA242E20EA4CE000166F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA242D20EA4CE000166F26 /* AppDelegate.swift */; };
 		F6BA243020EA4CE000166F26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA242F20EA4CE000166F26 /* ViewController.swift */; };
@@ -19,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F617AF1320EB6CD000A1CD21 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F617AF1520EB6D3200A1CD21 /* PictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureView.swift; sourceTree = "<group>"; };
 		F6BA242A20EA4CE000166F26 /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6BA242D20EA4CE000166F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +44,6 @@
 		F6BA242120EA4CE000166F26 = {
 			isa = PBXGroup;
 			children = (
-				F617AF1320EB6CD000A1CD21 /* Default-568h@2x.png */,
 				F6BA242C20EA4CE000166F26 /* Instagrid */,
 				F6BA242B20EA4CE000166F26 /* Products */,
 			);
@@ -64,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				F6BA243920EA4CE000166F26 /* Info.plist */,
+				F6E607FF20EF83AF00434400 /* Extensions */,
 				F6BA244320EA4EF800166F26 /* Model */,
 				F6BA244420EA4F0200166F26 /* View */,
 				F6BA244520EA4F0F00166F26 /* Controller */,
@@ -106,6 +104,13 @@
 				F6BA244120EA4D7E00166F26 /* Delm-Medium.otf */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F6E607FF20EF83AF00434400 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +177,6 @@
 				F6BA243520EA4CE000166F26 /* Assets.xcassets in Resources */,
 				F6BA244020EA4D6F00166F26 /* ThirstySoftRegular.otf in Resources */,
 				F6BA243320EA4CE000166F26 /* Main.storyboard in Resources */,
-				F617AF1420EB6CD000A1CD21 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

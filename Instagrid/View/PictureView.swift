@@ -45,12 +45,12 @@ class PictureView: UIView {
         }
     }
 
-    @IBOutlet private var smallImageOne: UIImageView!
-    @IBOutlet private var smallImageTwo: UIImageView!
-    @IBOutlet private var smallImageThree: UIImageView!
-    @IBOutlet private var smallImageFour: UIImageView!
-    @IBOutlet private var bigImageOne: UIImageView!
-    @IBOutlet private var bigImageTwo: UIImageView!
+    @IBOutlet var smallImageOne: UIImageView!
+    @IBOutlet var smallImageTwo: UIImageView!
+    @IBOutlet var smallImageThree: UIImageView!
+    @IBOutlet var smallImageFour: UIImageView!
+    @IBOutlet var bigImageOne: UIImageView!
+    @IBOutlet var bigImageTwo: UIImageView!
     
     var smallImageOnePicked = UIImage() {
         didSet {

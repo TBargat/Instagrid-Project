@@ -174,16 +174,22 @@ UINavigationControllerDelegate {
         
         switch buttonClicked {
         case .smallButtonOne:
+            pictureView.smallImageOne.contentMode = .scaleAspectFill
             pictureView.smallImageOnePicked = image
         case .smallButtonTwo:
+            pictureView.smallImageTwo.contentMode = .scaleAspectFill
             pictureView.smallImageTwoPicked = image
         case .smallButtonThree:
+            pictureView.smallImageThree.contentMode = .scaleAspectFill
             pictureView.smallImageThreePicked = image
         case .smallButtonFour:
+            pictureView.smallImageFour.contentMode = .scaleAspectFill
             pictureView.smallImageFourPicked = image
         case .bigButtonOne:
+            pictureView.bigImageOne.contentMode = .scaleAspectFill
             pictureView.bigImageOnePicked = image
         case .bigButtonTwo:
+            pictureView.bigImageTwo.contentMode = .scaleAspectFill
             pictureView.bigImageTwoPicked = image
         case .none:
             break 

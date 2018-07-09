@@ -30,6 +30,8 @@
 	<string>To be able to load photo</string>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>To be able to load photo</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Instagrid would like to save the picture on your phone</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
