@@ -11,39 +11,35 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
 
-    @IBOutlet weak var layoutOneButton: UIButton! {
-        didSet {
-            layoutOneButton.imageView?.isHidden = false
-        }
-    }
-    @IBOutlet weak var layoutTwoButton: UIButton!{
-        didSet {
-            layoutTwoButton.imageView?.isHidden = true
-        }
-    }
-    @IBOutlet weak var layoutThreeButton: UIButton!{
-        didSet {
-            layoutThreeButton.imageView?.isHidden = true
-        }
-    }
+    //-------------------------------------
+    // MARK : - PROPERTIES USED FOR THIS VC
+    //-------------------------------------
+    
+    @IBOutlet weak var layoutOneButton: UIButton!
+    @IBOutlet weak var layoutTwoButton: UIButton!
+    @IBOutlet weak var layoutThreeButton: UIButton!
     
     @IBOutlet weak var pictureView: PictureView!{
-        didSet{
-            pictureView.layer.applySketchShadow(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5), alpha: 0.5, x: 0, y: 2, blur: 4, spread: 0)
-        }
+        didSet{pictureView.layer.applySketchShadow(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5), alpha: 0.5, x: 0, y: 2, blur: 4, spread: 0)}
     }
+    
+    
+    var screenOrientation: ScreenOrientation = .portrait
     
     var buttonClicked: ButtonClicked = .none
     
-    enum ScreenOrientation {
-        case portrait, landscape
-    }
+    var layoutButtonSelected: LayoutButtonSelected = .layoutButtonOne
     
-    // to use the orientation of the screen in several cases
-    var screenOrientation: ScreenOrientation = .portrait
+    //------------------------------
+    // MARK : - OVERRIDDEN FUNCTIONS
+    //------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pictureView.setLayoutOne()
+        showCheckMark(layoutOneButton)
+        hideOtherCheckMarks(layoutTwoButton, layoutThreeButton)
+        resetLayoutOne()
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(dragPictureView(_:)))
         pictureView.addGestureRecognizer(panGestureRecognizer)
     }
@@ -52,33 +48,74 @@ UINavigationControllerDelegate {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         if UIDevice.current.orientation.isLandscape {
+            keepTheGoodLayoutButtonChecked()
             screenOrientation = .landscape
-            print("landscape")
         } else {
+            keepTheGoodLayoutButtonChecked()
             screenOrientation = .portrait
-            print("portrait")
+        }
+    }
+    
+    //------------------------------------------
+    // MARK : - MANAGEMENT OF THE LAYOUT BUTTONS
+    //------------------------------------------
+    
+    func keepTheGoodLayoutButtonChecked(){
+        switch layoutButtonSelected{
+        case .layoutButtonOne:
+            showCheckMark(layoutOneButton)
+            hideOtherCheckMarks(layoutTwoButton, layoutThreeButton)
+        case .layoutButtonTwo:
+            showCheckMark(layoutTwoButton)
+            hideOtherCheckMarks(layoutOneButton, layoutThreeButton)
+        case .layoutButtonThree:
+            showCheckMark(layoutThreeButton)
+            hideOtherCheckMarks(layoutOneButton, layoutTwoButton)
         }
     }
     
     @IBAction func didTapLayoutOneButton(_ sender: Any) {
+        resetLayoutOne()
+        layoutButtonSelected = .layoutButtonOne
         pictureView.setLayoutOne()
-        showCheckMark(layoutOneButton)
-        hideOtherCheckMarks(layoutTwoButton, layoutThreeButton)
-        
+        keepTheGoodLayoutButtonChecked()
     }
+    
     @IBAction func didTapLayoutTwoButton(_ sender: Any) {
+        resetLayoutTwo()
+        layoutButtonSelected = .layoutButtonTwo
         pictureView.setLayoutTwo()
-        showCheckMark(layoutTwoButton)
-        hideOtherCheckMarks(layoutOneButton, layoutThreeButton)
+        keepTheGoodLayoutButtonChecked()
     }
+    
     @IBAction func didTapLayoutThreeButton(_ sender: Any) {
+        resetLayoutThree()
+        layoutButtonSelected = .layoutButtonThree
         pictureView.setLayoutThree()
-        showCheckMark(layoutThreeButton)
-        hideOtherCheckMarks(layoutOneButton, layoutTwoButton)
+        keepTheGoodLayoutButtonChecked()
+    }
+    
+    // Function to reset the different layouts
+    
+    private func resetLayoutOne() {
+        for image in [pictureView.bigImageOne, pictureView.smallImageThree, pictureView.smallImageFour] {
+            resetPicture(picture: image!)
+        }
+    }
+    
+    private func resetLayoutTwo() {
+        for image in [pictureView.bigImageTwo, pictureView.smallImageOne, pictureView.smallImageTwo] {
+            resetPicture(picture: image!)
+        }
+    }
+    
+    private func resetLayoutThree() {
+        for image in [pictureView.smallImageOne, pictureView.smallImageTwo, pictureView.smallImageThree, pictureView.smallImageFour] {
+            resetPicture(picture: image!)
+        }
     }
     
     // Functions to change the checked image of our layout buttons
-    
     private func hideOtherCheckMarks(_ firstOtherButton: UIButton, _ secondOtherButton: UIButton){
         firstOtherButton.imageView?.isHidden = true
         secondOtherButton.imageView?.isHidden = true
@@ -88,7 +125,24 @@ UINavigationControllerDelegate {
         button.imageView?.isHidden = false
     }
     
-    // Management of the buttons to add pictures on the canvas
+    //-------------------------------------------
+    // TODO : - Finish this function or delete it
+    //-------------------------------------------
+    // Function to put the cross back on the picture
+
+    private func resetPicture(picture: UIImageView) {
+        switch screenOrientation {
+        case .landscape:
+            picture.image = #imageLiteral(resourceName: "CrossShapeGray")
+        case .portrait:
+            picture.image = #imageLiteral(resourceName: "CrossShape")
+        }
+        picture.contentMode = .center
+    }
+    
+    //-----------------------------------------------------
+    // MARK : - MANAGEMENT OF THE BUTTONS THAT ADD PICTURES
+    //-----------------------------------------------------
     
     @IBAction func didTapSmallImageOne(_ sender: Any) {
         buttonClicked = .smallButtonOne
@@ -115,19 +169,11 @@ UINavigationControllerDelegate {
         displayActionSheet()
     }
     
-    // Function to reset the frame without any picture
-    
-    private func resetPictureView() {
-    }
-    
-    // Enum for the button identification
-    enum ButtonClicked {
-        case none, smallButtonOne, smallButtonTwo, smallButtonThree, smallButtonFour, bigButtonOne, bigButtonTwo
-    }
-    
+    //-------------------------------------------------------------
+    // MARK : - MANAGEMENT OF THE PICTURE SOURCE & THE ACTION SHEET
+    //-------------------------------------------------------------
     
     // Function Photo Library
-    
     private func accessPhotoLibrary() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -136,8 +182,8 @@ UINavigationControllerDelegate {
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
-    // Function Acces Camera
     
+    // Function Acces Camera
     private func accessCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = UIImagePickerController()
@@ -165,8 +211,11 @@ UINavigationControllerDelegate {
         pictureSourceSelector.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(pictureSourceSelector, animated: true, completion: nil)
-        
     }
+    
+    //----------------------------------------------------------------
+    // MARK : - MANAGEMENT OF THE PICTURE PICKER TO SET UP THE PICTURE
+    //----------------------------------------------------------------
     
     // Delegate for the picker controller
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -197,8 +246,12 @@ UINavigationControllerDelegate {
         dismiss(animated:true, completion: nil)
     }
     
-    //Function to recognize the gesture
+    //---------------------------------------------------------------------
+    // MARK : - MANAGEMENT OF THE PICTURE SWIPE GESTURE AND SHARING OPTIONS
+    //---------------------------------------------------------------------
     
+    
+    //Function to recognize the gesture A MODIFIER
     @objc func dragPictureView(_ sender: UIPanGestureRecognizer){
         switch sender.state {
         case .changed :
@@ -207,14 +260,12 @@ UINavigationControllerDelegate {
             break
         }
     }
-    // Function to share the picture once it's finished
     
+    // Function to share the picture once it's finished
     private func sharePicture() {
-        // Animation of the Picture view
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
         var translationTransform: CGAffineTransform
-        // ajouter un switch pour portrait et paysage
         switch screenOrientation {
         case .landscape:
             translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
@@ -227,6 +278,7 @@ UINavigationControllerDelegate {
         }) { (success) in
             if success {
                 self.openTheSharingSheetPictureViewIntoAnImage()
+                self.putThePictureViewBack()
             }
         }
     }
@@ -240,10 +292,11 @@ UINavigationControllerDelegate {
             translationTransform = .identity
         }
         UIView.animate(withDuration: 2, animations: {
-            self.pictureView.transform = translationTransform
-        }) { (success) in
-            if success {
-                print("Working")
+            self.pictureView.transform = translationTransform}) {
+                (success) in if success {
+                self.resetLayoutOne()
+                self.resetLayoutTwo()
+                self.resetLayoutThree()
             }
         }
     }
@@ -252,45 +305,12 @@ UINavigationControllerDelegate {
         let imageToBeSaved = pictureView.asImage()
         let activityItem: [AnyObject] = [imageToBeSaved as AnyObject]
         let avc = UIActivityViewController(activityItems: activityItem as [AnyObject], applicationActivities: nil)
-        self.present(avc, animated: true, completion: putThePictureViewBack)
+        self.present(avc, animated: true, completion: nil)
     }
     
 
 }
 
-// Extension to turn a View into an Image
 
-extension UIView {
-    func asImage() -> UIImage {
-        let renderer = UIGraphicsImageRenderer(bounds: self.bounds)
-        return renderer.image { (context) in
-            layer.render(in: context.cgContext)
-        }
-    }
-}
 
-// Extension to have the exact same shadow than on Sketch
-
-extension CALayer {
-    func applySketchShadow(
-        color: UIColor = .black,
-        alpha: Float = 0.5,
-        x: CGFloat = 0,
-        y: CGFloat = 2,
-        blur: CGFloat = 4,
-        spread: CGFloat = 0)
-    {
-        shadowColor = color.cgColor
-        shadowOpacity = alpha
-        shadowOffset = CGSize(width: x, height: y)
-        shadowRadius = blur / 2.0
-        if spread == 0 {
-            shadowPath = nil
-        } else {
-            let dx = -spread
-            let rect = bounds.insetBy(dx: dx, dy: dx)
-            shadowPath = UIBezierPath(rect: rect).cgPath
-        }
-    }
-}
 
