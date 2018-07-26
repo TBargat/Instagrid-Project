@@ -255,14 +255,15 @@ UINavigationControllerDelegate {
     @objc func dragPictureView(_ sender: UIPanGestureRecognizer){
         switch sender.state {
         case .changed :
-            sharePicture()
+            sharePictureGesture()
+            openTheSharingSheetPictureViewIntoAnImage()
         default:
             break
         }
     }
     
     // Function to share the picture once it's finished
-    private func sharePicture() {
+    private func sharePictureGesture() {
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
         var translationTransform: CGAffineTransform
@@ -277,7 +278,6 @@ UINavigationControllerDelegate {
             self.pictureView.transform = translationTransform
         }) { (success) in
             if success {
-                self.openTheSharingSheetPictureViewIntoAnImage()
                 self.putThePictureViewBack()
             }
         }
@@ -305,7 +305,7 @@ UINavigationControllerDelegate {
         let imageToBeSaved = pictureView.asImage()
         let activityItem: [AnyObject] = [imageToBeSaved as AnyObject]
         let avc = UIActivityViewController(activityItems: activityItem as [AnyObject], applicationActivities: nil)
-        self.present(avc, animated: true, completion: nil)
+        self.present(avc, animated: true)
     }
     
 
