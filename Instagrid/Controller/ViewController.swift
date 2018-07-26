@@ -18,6 +18,9 @@ UINavigationControllerDelegate {
     @IBOutlet weak var layoutOneButton: UIButton!
     @IBOutlet weak var layoutTwoButton: UIButton!
     @IBOutlet weak var layoutThreeButton: UIButton!
+    @IBOutlet weak var layoutOneSelectedIcon: UIImageView!
+    @IBOutlet weak var layoutTwoSelectedIcon: UIImageView!
+    @IBOutlet weak var layoutThreeSelectedIcon: UIImageView!
     
     @IBOutlet weak var pictureView: PictureView!{
         didSet{pictureView.layer.applySketchShadow(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5), alpha: 0.5, x: 0, y: 2, blur: 4, spread: 0)}
@@ -37,8 +40,8 @@ UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         pictureView.setLayoutOne()
-        showCheckMark(layoutOneButton)
-        hideOtherCheckMarks(layoutTwoButton, layoutThreeButton)
+        showCheckMark(layoutOneSelectedIcon)
+        hideOtherCheckMarks(layoutTwoSelectedIcon, layoutThreeSelectedIcon)
         resetLayoutOne()
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(dragPictureView(_:)))
         pictureView.addGestureRecognizer(panGestureRecognizer)
@@ -63,14 +66,14 @@ UINavigationControllerDelegate {
     func keepTheGoodLayoutButtonChecked(){
         switch layoutButtonSelected{
         case .layoutButtonOne:
-            showCheckMark(layoutOneButton)
-            hideOtherCheckMarks(layoutTwoButton, layoutThreeButton)
+            showCheckMark(layoutOneSelectedIcon)
+            hideOtherCheckMarks(layoutTwoSelectedIcon, layoutThreeSelectedIcon)
         case .layoutButtonTwo:
-            showCheckMark(layoutTwoButton)
-            hideOtherCheckMarks(layoutOneButton, layoutThreeButton)
+            showCheckMark(layoutTwoSelectedIcon)
+            hideOtherCheckMarks(layoutOneSelectedIcon, layoutThreeSelectedIcon)
         case .layoutButtonThree:
-            showCheckMark(layoutThreeButton)
-            hideOtherCheckMarks(layoutOneButton, layoutTwoButton)
+            showCheckMark(layoutThreeSelectedIcon)
+            hideOtherCheckMarks(layoutOneSelectedIcon, layoutTwoSelectedIcon)
         }
     }
     
@@ -116,13 +119,13 @@ UINavigationControllerDelegate {
     }
     
     // Functions to change the checked image of our layout buttons
-    private func hideOtherCheckMarks(_ firstOtherButton: UIButton, _ secondOtherButton: UIButton){
-        firstOtherButton.imageView?.isHidden = true
-        secondOtherButton.imageView?.isHidden = true
+    private func hideOtherCheckMarks(_ firstOtherButton: UIImageView, _ secondOtherButton: UIImageView){
+        firstOtherButton.isHidden = true
+        secondOtherButton.isHidden = true
     }
     
-    private func showCheckMark(_ button: UIButton) {
-        button.imageView?.isHidden = false
+    private func showCheckMark(_ button: UIImageView) {
+        button.isHidden = false
     }
     
     //-------------------------------------------
