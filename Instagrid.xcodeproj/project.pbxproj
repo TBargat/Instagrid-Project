@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F617AF1620EB6D3200A1CD21 /* PictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F617AF1520EB6D3200A1CD21 /* PictureView.swift */; };
+		F632925921105E1800563121 /* CanvasFilling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F632925821105E1800563121 /* CanvasFilling.swift */; };
 		F6A6F8D32109D52B0060F33F /* SketchSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A6F8D22109D52B0060F33F /* SketchSettings.swift */; };
 		F6A6F8D52109D5AE0060F33F /* SaveViewAsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A6F8D42109D5AE0060F33F /* SaveViewAsImage.swift */; };
 		F6A6F8D8210A09CD0060F33F /* EnumsUsedInTheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A6F8D7210A09CD0060F33F /* EnumsUsedInTheViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		F617AF1520EB6D3200A1CD21 /* PictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureView.swift; sourceTree = "<group>"; };
+		F632925821105E1800563121 /* CanvasFilling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasFilling.swift; sourceTree = "<group>"; };
 		F6A6F8D22109D52B0060F33F /* SketchSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchSettings.swift; sourceTree = "<group>"; };
 		F6A6F8D42109D5AE0060F33F /* SaveViewAsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveViewAsImage.swift; sourceTree = "<group>"; };
 		F6A6F8D7210A09CD0060F33F /* EnumsUsedInTheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsUsedInTheViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		F6BA244320EA4EF800166F26 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F632925821105E1800563121 /* CanvasFilling.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			files = (
 				F617AF1620EB6D3200A1CD21 /* PictureView.swift in Sources */,
 				F6A6F8D32109D52B0060F33F /* SketchSettings.swift in Sources */,
+				F632925921105E1800563121 /* CanvasFilling.swift in Sources */,
 				F6BA243020EA4CE000166F26 /* ViewController.swift in Sources */,
 				F6A6F8D8210A09CD0060F33F /* EnumsUsedInTheViewController.swift in Sources */,
 				F6A6F8D52109D5AE0060F33F /* SaveViewAsImage.swift in Sources */,

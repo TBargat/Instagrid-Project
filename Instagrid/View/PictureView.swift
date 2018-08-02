@@ -10,9 +10,7 @@ import UIKit
 
 class PictureView: UIView {
 
-    //---------------------------------------
-    // MARK : - PROPERTIES USED FOR THIS VIEW
-    //---------------------------------------
+    // MARK : - IBOUTLETS USED FOR THIS VIEW
     
     @IBOutlet private var smallFrameOne: UIView!{
         didSet{makeRoundCorners(frame: smallFrameOne)}
@@ -40,6 +38,8 @@ class PictureView: UIView {
     @IBOutlet var bigImageOne: UIImageView!
     @IBOutlet var bigImageTwo: UIImageView!
     
+    // MARK : - PROPERTIES USED TO ISOLATE THE UIIMAGES ON THE CANVAS
+    
     var smallImageOnePicked = UIImage() {
         didSet {smallImageOne.image = smallImageOnePicked}
     }
@@ -64,10 +64,8 @@ class PictureView: UIView {
         didSet{bigImageTwo.image = bigImageTwoPicked}
     }
    
-    
-    //-----------------------------------------
+
     // MARK : - METHODS TO GET THE GOOD LAYOUTS
-    //-----------------------------------------
     
     func setLayoutOne() {
         smallFrameOne.isHidden = true
@@ -96,10 +94,8 @@ class PictureView: UIView {
         bigFrameOne.isHidden = true
         bigFrameTwo.isHidden = true
     }
-    
-    //---------------------------------------------------------
-    // MARK : - FUNCTION USED TO ROUND THE CORNERS OF THE TILES
-    //---------------------------------------------------------
+
+    // MARK : - METHOD USED TO ROUND THE CORNERS OF THE TILES
     
     private func makeRoundCorners(frame : UIView){
         frame.layer.cornerRadius = 2
