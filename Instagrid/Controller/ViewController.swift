@@ -185,7 +185,7 @@ UINavigationControllerDelegate {
         }
     }
     
-    // Function to display our Action Sheet
+    // Method to display our Action Sheet
     private func displayActionSheet() {
         
         let pictureSourceSelector = UIAlertController(title: nil, message: "Choose your picture source" , preferredStyle: .actionSheet)
@@ -239,7 +239,7 @@ UINavigationControllerDelegate {
     // MARK : - MANAGEMENT OF THE PICTURE SWIPE GESTURE AND SHARING OPTIONS
     
     
-    //Function to recognize the gesture an launch the sharing process
+    // Method to recognize the gesture an launch the sharing process
     
     @objc func dragPictureView(_ sender: UIPanGestureRecognizer){
         if pictureViewIsFull() == true {
@@ -255,7 +255,7 @@ UINavigationControllerDelegate {
         }
     }
     
-    // Function to share the picture once the canvas is full
+    // Method to share the picture once the canvas is full
     
     private func sharePictureGesture() {
         let screenHeight = UIScreen.main.bounds.height
