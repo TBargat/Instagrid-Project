@@ -285,7 +285,7 @@ UINavigationControllerDelegate {
         case .portrait:
             translationTransform = .identity
         }
-        UIView.animate(withDuration: 2, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.pictureView.transform = translationTransform}) {
                 (success) in if success {
                 self.resetLayoutOne()

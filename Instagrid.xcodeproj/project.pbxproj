@@ -77,12 +77,12 @@
 		F6BA242C20EA4CE000166F26 /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				F6BA243920EA4CE000166F26 /* Info.plist */,
-				F6E607FF20EF83AF00434400 /* Extensions */,
 				F6BA244320EA4EF800166F26 /* Model */,
 				F6BA244420EA4F0200166F26 /* View */,
 				F6BA244520EA4F0F00166F26 /* Controller */,
+				F6E607FF20EF83AF00434400 /* Extensions */,
 				F6BA244620EA4F1C00166F26 /* Supporting Files */,
+				F6BA243920EA4CE000166F26 /* Info.plist */,
 			);
 			path = Instagrid;
 			sourceTree = "<group>";
